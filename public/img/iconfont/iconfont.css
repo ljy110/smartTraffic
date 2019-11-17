@@ -1,0 +1,26 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1564593541732'); /* IE9 */
+  src: url('iconfont.eot?t=1564593541732#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPQAAsAAAAAB/gAAAOEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDXIMkATYCJAMMCwgABCAFhG0HOxvvBhHVmwfJfiTYuMXFyvqTkGFFTdKb4IG3s95HJvFkQR9MdXD2AHSskgABeVtzjtRPTpioyZKsHXn0D3kqpJemA5/ncnot8fkty2mOqUe9AOOAAtsTo60HWiABeYvsrkAs8jwE4CBWNlGjVoMW2NCY0wQgBvTt3RVbxoJuqBfYEBgVazViCRZscq68BSwOvi++U5gNJBaFeVGTXjV7UOWT8SlSTfFPoYOazZTxXAC/CRSQDTSITpWeNqgok03hUDW6udxAI5Bjxf1+AommM1b6x5MgDMxaFwDpOCvhk+EIIOBTZBYJnP8mMAArsAK4SVjBeyh0siskyOuN7r0qtLi49ePHdrOvpe9RixOPSjzyWlesCV4RHLxqlahyrw6bX+cqLm6luH2+oZJqHfwd1fZlrlq1f2eIr+XGmOEnLkRPOZjClL3z9wux+3DUpkvdPTsuhMu1F1PM3Zej1LpLbabsSc2r9sUD9jvN+XsZNH9/2JAlPl/LlTudPaxTQ0dXBQ9Akelt9+xqWFBzk9kqsM2E8W09s7zHFweNdA2dc2pYsKoujdnJa09EzsrJrhjS4myti4Z3+aJnC8t16y5mhvSV8+bKPrLX/Lm9ZUKbo+xTeF/Cjb5bm14d4rTUTJ9yOrXZrEU6eFbdirFtnu7H3ijeryJWt+to1ogrYXZst9qm/O1e35s57g/uOW8CYgx1PKNj/8ckXRl5pcg1zV0YMzImMfbKRrO6GdF354whojULm2fULhPlNGuYrjZFrQ/2GcAieXtX9CylvTXoAoB/prqsZqPcdHVMjf+Vv6HH/a6zO5sVftucGoCnvX/NxGH/dA3chu1GvQJ+nBTYpjU9VKsViSMxvIrGqRASsEjQ8rsaAQK96q8LAdeCwEZIAomVGChsJNM0KxsWnJSAgY3KcJCl9mYnQYahENoOZJqJIPA6DImHy1B43aZp1ktYCPUTBt4UHNDvDnvuHUvqxKgFHZg/JEujt+2iwvo7hqXXnJYH7DfynOJQF1U+f8MReYwF8yc0Ih480wBXdBn2PcHElNFKEUWmtix91Y0KS8NKOWFIE8gBxh9ILDLyXnehCp+/Q8Gip3EDqSr8htgs9Q9qhQpAu2lGEOlarpl9BA0hPOAxMgBX5EK9lSFgqh6VIUsUYo/UpFWSTh6qKebXDc+3B3Aw56ukUEKjpjHEZUiecueGB71aAQ==') format('woff2'),
+  url('iconfont.woff?t=1564593541732') format('woff'),
+  url('iconfont.ttf?t=1564593541732') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1564593541732#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: gray;
+}
+
+.icon-yonghuming:before {
+  content: "\e606";
+}
+
+.icon-mima:before {
+  content: "\e61a";
+}
+

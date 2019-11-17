@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.3.1.js"></script>
+<!--    <script src="../CSS/layui/layui.js"></script>-->
+<!--    <link rel="stylesheet" href="../CSS/layui/css/layui.css" />-->
+</head>
+<style>
+    input{
+        width: 50px;
+    }
+
+    #content{
+        margin-top: 50px;
+        margin-left: 60px;
+    }
+</style>
+<body>
+<table style="border: solid 1px">
+
+</table>
+
+</body>
+<script>
+    var timelist = ['8:00','9:00','10:00','11:00','12:00','13:00','14:00'
+        ,'15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','24:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00'];
+    var time_select = document.getElementById("time_select");
+    var time_select2 = document.getElementById("time_select2");
+    var red_light = document.getElementById("red");
+    var green_light = document.getElementById("green");
+    var save_plan = document.getElementById("save");
+    addTime(time_select);
+    addTime(time_select2);
+    function addTime(id) {
+        for (var i = 0;i<timelist.length;i++){
+            id.innerHTML+= "<option value='"+timelist[i]+"'>" +timelist[i]+ "</option>"
+        }
+    }
+
+    save_plan.onclick = function () {
+        var light_id = storage["light_id"];
+        console.log(4545);
+        $.ajax({
+            type:"POST",
+            url:"/lightconf/add",
+            data:{"id":light_id,"d":{"begin":time_select.value,"end":time_select2.value}},
+            success:function (data) {
+                  if (data.rs==="t"){
+
+
+                  }else if (data.rs==="f"){
+                      alert("请求失败");
+                  }
+            },
+        })
+
+    }
+
+
+
+
+</script>
+</html>

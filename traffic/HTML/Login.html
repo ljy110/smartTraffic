@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智慧交通</title>
+    <link rel="stylesheet" href="../CSS/Login.css">
+    <link rel="stylesheet" href="../img/iconfont/iconfont.css">
+    <script src="../jquery-3.3.1.js"></script>
+</head>
+<body>
+<div>
+    <div  class="map-service" >
+        <div class="map-service-right">
+            <div class="china-map">
+                <div class="region-list postition-1">
+                    <div class="area-box">
+                        <span class="dot"></span>
+                        <span class="pulse delay-01"></span>
+                        <span class="pulse delay-02"></span>
+                    </div>
+                </div>
+                <div class="region-list active postition-2 online-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-06"></span>
+                        <span class="pulse delay-05"></span>
+                        <span class="pulse delay-04"></span></div>
+                    <div class="show-regin"><span>四川</span></div>
+                </div>
+                <div class="region-list postition-3">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-01"></span>
+                        <span class="pulse delay-02"></span>
+                    </div>
+                </div>
+                <div class="region-list waite postition-4 waite-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-01"></span>
+                        <span class="pulse delay-02"></span>
+                    </div>
+                    <div class="show-regin"><span>陕西</span></div>
+                </div>
+                <div class="region-list waite postition-5 waite-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-01"></span>
+                        <span class="pulse delay-02"></span>
+                    </div>
+                    <div class="show-regin"><span>湖北</span></div>
+                </div>
+                <div class="region-list active postition-6 online-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-06"></span>
+                        <span class="pulse delay-05"></span>
+                        <span class="pulse delay-04"></span></div>
+                    <div class="show-regin"><span>广东</span></div>
+                </div>
+                <div class="region-list active postition-13 online-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-04"></span>
+                        <span class="pulse delay-05"></span>
+                        <span class="pulse delay-03"></span></div>
+                    <div class="show-regin"><span>内蒙古</span></div>
+                </div>
+                <div class="region-list  active  postition-11 online-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-06"></span>
+                        <span class="pulse delay-05"></span>
+                        <span class="pulse delay-04"></span></div>
+                    <div class="show-regin"><span>山东</span></div>
+                </div>
+                <div class="region-list active postition-7 online-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-10"></span>
+                        <span class="pulse delay-09"></span>
+                        <span class="pulse delay-08"></span></div>
+                    <div class="show-regin"><span>辽宁</span></div>
+                </div>
+                <div class="region-list active postition-8 online-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-06"></span>
+                        <span class="pulse delay-05"></span>
+                        <span class="pulse delay-04"></span></span></div>
+                    <div class="show-regin"><span>北京</span></div>
+                </div>
+                <div class="region-list active postition-9 online-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-10"></span>
+                        <span class="pulse delay-09"></span>
+                        <span class="pulse delay-08"></span></div>
+                    <div class="show-regin"><span>江苏</span></div>
+                </div>
+                <div class="region-list active postition-10 online-node">
+                    <div class="area-box"><span class="dot"></span><span class="pulse delay-06"></span>
+                        <span class="pulse delay-05"></span>
+                        <span class="pulse delay-04"></span></div>
+                    <div class="show-regin"><span>香港</span></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="login">
+        <div class="main_login">
+            <div class="login_title">智慧交通</div>
+            <p>登陆</p>
+            <form>
+                <div class="username">
+                    <i class="iconfont" style="position: absolute;margin-top: 20px" >&#xe606;</i>
+                    <input type="text" id="username" placeholder=" 请输入用户名" autocomplete="off">
+                </div>
+                <div class="password" style="position: relative">
+                    <i class="iconfont" style="position: absolute;margin-top: 20px" >&#xe61a;</i>
+                    <input type="password" id="password" placeholder=" 请输入密码">
+                </div>
+                <button type="button" id="login_btn" >登陆</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    $(document).ready(function(){
+
+        $('#login_btn').click(function () {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            $.ajax({
+                type:'post',
+                url:'/login',
+                data:{"nm":username,"pw":password},
+                success:function(data){
+                    var status = JSON.parse(data);
+                    if (status.rs ==="t"){
+                        console.log("登陆成功")
+                        window.location="main2.html";
+                    }else if (status.rs ==="f"){
+                        alert("登陆失败");
+                    }
+                }
+
+            })
+        })
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智慧交通</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../jquery-3.3.1.js"></script>
+    <script src="../CSS/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../CSS/layui/layui.js"></script>
+    <link rel="stylesheet" href="../CSS/layui/css/layui.css" />
+
+</head>
+<body>
+<div id="main">
+    <div id="h_bar">
+        <a href="Login.html">退出登陆</a>
+    </div>
+    <div id="Left_log">
+        <div id="left_logo">
+            <div id="title_main">智慧交通</div>
+        </div>
+        <div class="inline" id="log" >
+            <div id="road">
+                变更日志
+            </div>
+            <div id="roadLog">
+                2019-10-15-10:23:55[津南区-景盛路&渌水道]：红灯+10s<br/>
+
+                2019-10-15-10:24:06[津南区-景盛路&渌水道]：绿灯+15s<br/>
+
+                2019-10-15-10:36:54[津南区-景盛路&渌水道]：绿灯-10s<br/>
+            </div>
+        </div>
+        <div class="menu_bottom_style"></div>
+    </div>
+    <!-- <div id="content"></div> -->
+
+    <div class="map">
+        <div  id="container" class="inline"></div>
+        <input type="button" class="btn" id="btn_light" value="路灯全局设置" data-toggle="modal" data-target="#Model_light">
+        <input type="button" class="btn" id="btn_road" value="车道全局设置"  data-toggle="modal" data-target="#Model_road">
+    </div>
+
+    <!-- 路灯 -->
+    <div class="modal fade" id="Model_light" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 style="text-align: center">天津市红绿灯全局策略</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;margin-bottom: 5px">
+                            <span>天津市</span>
+                            <div class="layui-inline">
+                                <select name="district" class="city" id="dis_select">
+                                        <option value="">--请选择--</option>
+                                </select>
+                            </div> 
+                            <span>县/区</span>
+                            <div class="layui-inline">
+                                <select name="district" class="road" id="road1_select">
+                                    <option value="">--请选择--</option>
+                                </select>
+                            </div>
+                            <span>与</span>
+                            <div class="layui-inline">
+                                <select name="district" class="road"  id="road2_select">
+                                    <option value="">--请选择--</option>
+                                </select>
+                            </div>
+                            <span>交叉口</span>
+                    </div>
+                    <div class="center_plan">
+                        <table class="layui-table">
+                            <colgroup>
+                                <col width="50">
+                                <col width="200">
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>时间短</th>
+                                <th>策略详情</th>
+                            </tr>
+                            </thead>
+                            <tbody id="light_table">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="light_add">添加策略</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!-- 路灯 -->
+
+    <!-- 车道 -->
+    <div class="modal fade" id="Model_road" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 style="text-align: center">天津市变道全局策略</h4>
+                </div>
+                <div class="modal-body">
+                    <div  style="text-align: center;margin-bottom: 5px">
+                        <span>天津市</span>
+                        <div class="layui-inline">
+                            <select name="district" class="district" id="dis_road">
+                                <option value="">--请选择--</option>
+                            </select>
+                        </div>
+                        <span>县/区</span>
+                        <div class="layui-inline">
+                            <select name="district" class="road"  id="r_road">
+                                <option value="">--请选择--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="center_plan">
+                        <table class="layui-table">
+                            <colgroup>
+                                <col width="50">
+                                <col width="200">
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>时间段</th>
+                                <th>策略详情</th>
+                            </tr>
+                            </thead>
+                            <tbody id="road_table">
+                                    
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="road_add">添加策略</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+     <!-- 车道 -->
+
+</div>
+
+
+<!-- 路灯设置弹出框 -->
+<div id="setting_light" style="display: none">
+    <form class="layui-form" id="light_form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">策略编号</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="planId" lay-verify="required" placeholder="请输入编号" autocomplete="off" class="layui-input">
+                </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">时间段</label>
+            <div class="layui-input-inline">
+                <select id="begin_light">
+                    <option value="">--请选择--</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+           <label class="layui-form-label">至</label>
+            <div class="layui-input-inline">
+                <select id="end_light">
+                    <option value="">--请选择--</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">变换时间:</label>
+            <div class="layui-input-inline">
+               <input type="text" id="time" lay-verify="required" placeholder="请设置秒数" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </form>
+</div>
+ <!-- 路灯设置弹出框 -->
+
+<!-- 道路设置弹出框 -->
+<div id="setting_road" style="display: none">
+        <form class="layui-form" id="road_form">
+                <div class="layui-form-item">
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">策略编号</label>
+                                <div class="layui-input-inline">
+                                    <input id="planRoad" type="text" name="red_time" lay-verify="required" placeholder="策略编号" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                    <label class="layui-form-label">时间段</label>
+                    <div class="layui-input-inline">
+                        <select id="begin_road">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                   <label class="layui-form-label">至</label>
+                    <div class="layui-input-inline">
+                        <select id="end_road">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">隔离带位置:</label>
+                    <div class="layui-input-inline">
+                        <input id="roadChange" type="text" name="red_time" lay-verify="required" placeholder="隔离带当前位置" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </form>
+</div>
+<!-- 道路设置弹出框 -->
+
+<!-- 轮播录像 -->
+<div id="pic_layer" style="display: none">
+    <a id="pre"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <img id = "view" src="../img/view/01.png">
+    <a id="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<!-- 轮播录像 -->
+</body>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=b24c4de4ab028162766b5947ddb2bd94&callback=onLoad"></script>
+<script>
+
+
+    // window.setTimeout (add_log(),3000);
+    // window.setInterval(add_log(),1000)
+    window.setInterval(
+        function (){
+        var Log = document.getElementById("roadLog");
+        var myDate = new Date();
+        var month=myDate.getMonth()+1;
+        var s = Math.round(Math.random()*10);  
+        var current = myDate.getFullYear()+"-"+month+"-"+myDate.getDate()+"-"+""+myDate.getHours()+":"+myDate.getMinutes()+":"+myDate.getSeconds();
+        Log.innerHTML += '<p>'+current+'[津南区-景盛路&渌水道]: 红灯+'+s+'s</p>'
+    },3000
+    )
+</script>
+<script src="../js/map.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/setting.js"></script>
+</html>

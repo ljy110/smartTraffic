@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ol,ul{list-style:none;}
+
+body,html{
+    height: 100%;
+    /* position: relative; */
+    background: url("../img/login_background.png");
+    /* transform: rotate(45deg); */
+}
+
+
+
+@media screen and (min-width: 639px) and (max-width:1023px){
+    #left_logo{
+        background: url("../img/logo_bg_03.png") no-repeat;
+        width:200px;
+        height:50px;
+        margin-left: 10px;
+        font-family: Calibri;
+        font-size: 2rem;
+        color: white;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main>#Left_log{
+        width: 300px;
+        top: 10px;
+        bottom: 0;
+        margin-left: 5px
+    }
+
+    #Left_log>#log{
+        width: 200px;
+        top: 71px;
+        margin-left: 10px;
+        position: absolute;
+        border-left:1px solid #41a2ff;
+        border-right:1px solid #41a2ff;
+        border-top:1px solid #41a2ff;
+        bottom: 31px;
+        background: url("../img/menu_bg_02.png") no-repeat;
+        background-size: 400px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .menu_bottom_style{
+        width:200px;
+        background:url(../img/menu_buttom_bg_03.png) no-repeat;
+        margin-bottom:10px; margin-left:10px;
+        margin-right:10px; height:20px;
+        position: absolute;
+        opacity: 0.6;
+        bottom: 5px;
+    }
+
+    /* #content{
+        position: absolute;
+        top: 19px;
+        bottom: 5px
+    } */
+
+    #container{
+        position: absolute;
+        top: 20px;
+        left: 220px;
+        bottom: 15px;
+        right: 10px;
+    }
+
+    #btn_light{
+        position: absolute;
+        bottom: 70px;
+        left: 225px;
+     }
+     
+     
+     #btn_road{
+         position: absolute;
+         bottom: 30px;
+         left: 225px;
+     }
+
+     #roadLog{
+        margin-top: 23px;
+        margin-left: 5px;
+        font-size: 10px;
+        color: #FFFFFF
+    }
+
+    #h_bar{
+        width: 100%;
+        height: 20px;
+        }
+
+    #main #h_bar a{
+        float: right; 
+        margin-right: 10px;
+        margin-top: 5px;
+        font-size: 10px;
+        color: white
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) and (max-width:2000px){
+    #left_logo{
+        background: url("../img/logo_bg_03.png") no-repeat;
+        width:280px;
+        height:105px;
+        margin-left: 10px;
+        font-family: Calibri;
+        font-size: 3rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu_bottom_style{
+        width:280px;
+        background:url(../img/menu_buttom_bg_03.png) no-repeat;
+        margin-bottom:10px; margin-left:10px;
+        margin-right:10px; height:36px;
+        position: absolute;
+        opacity: 0.6;
+        bottom: 5px;
+    }
+
+    #main>#Left_log{
+        width: 300px;
+        top: 35px;
+        bottom: 0;
+    } 
+
+    #log{
+        width: 280px;
+        top: 135px;
+        margin-left: 10px;
+        position: absolute;
+        border-left:1px solid #41a2ff;
+        border-right:1px solid #41a2ff;
+        border-top:1px solid #41a2ff;
+        bottom: 51px;
+        background: url("../img/menu_bg_02.png") no-repeat;
+        background-size: 400px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    #content{
+        position: absolute;
+        top: 19px;
+        left: 7px;
+    }
+
+    #container{
+        position: absolute;
+        top: 35px;
+        left: 300px;
+        bottom: 20px;
+        right: 10px;
+    }
+
+    #btn_light{
+        position: absolute;
+        bottom: 70px;
+        left: 320px;
+     }
+     
+     
+     #btn_road{
+         position: absolute;
+         bottom: 30px;
+         left: 320px;
+     }
+
+     #roadLog{
+         margin-top: 23px;
+         margin-left: 5px;
+         font-size: 15px;
+         color: #FFFFFF
+     }
+
+    #h_bar{
+    width: 100%;
+    height: 35px;
+    }
+
+    #main #h_bar a{
+        float: right; 
+        margin-right: 10px;
+        margin-top: 5px;
+        color: white;
+    }
+
+}
+
+
+
+
+.inline{
+    display: inline-block;
+}
+
+
+#road{
+    position: absolute;
+    width: 100%;
+    left: 15px;
+    color: red;
+    font-size: larger;
+    height: 30px;
+}
+
+#light{
+    float: right;
+    width: 50%;
+    border-bottom: solid 1px #41a2ff;
+    text-align: center;
+    color: red;
+    font-size: larger;
+    height: 30px;
+}
+
+.content{
+    position: absolute;
+    top: 35px;
+    left: 300px;
+}
+
+
+#log::-webkit-scrollbar{
+    width: 10px;
+    height: auto;
+    background-color: rgba(0,51,130,0.7);
+    border-radius: 10px;
+}
+
+#log::-webkit-scrollbar-button{
+    display: none;
+}
+
+#log::-webkit-scrollbar-thumb{
+    background-color: rgba(95,158,160,0.7);
+    border-radius: 10px;
+}
+
+
+#map_bar{
+    position: absolute;
+    top: 35px;
+    left: 300px;
+    right: 0;
+    height: 35px;
+    background-color: #25A5F7;
+}
+
+
+table{
+    margin: 0 0 !important;
+}
+
+tr{
+    height: 30px !important;
+}
+
+.center_plan{
+    height: 250px;
+    border: solid 1px lightgrey;
+    margin: 0 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.time_log{
+    color: #1E9FFF;
+}
+.change_log{
+    color: whitesmoke;
+}
+
+input{
+    width: 50px;
+}
+
+#setting_light{
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+#setting_road{
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.delete{
+    color: cornflowerblue;
+}
+
+
+.inline{
+    display: inline-block;
+}
+
+/*#light{*/
+/*position: absolute;*/
+/*width: 50%;*/
+/*}*/
+
+#road{
+    position: absolute;
+    width: 100%;
+    left: 15px;
+    color: red;
+    font-size: larger;
+    height: 30px;
+
+}
+
+#light{
+    float: right;
+    width: 50%;
+    border-bottom: solid 1px #41a2ff;
+    text-align: center;
+    color: red;
+    font-size: larger;
+    height: 30px;
+}
+
+.content{
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    width: 100%;
+}
+
+/* 
+#log{
+    width: 280px;
+    top: 135px;
+    margin-left: 10px;
+    position: absolute;
+    border-left:1px solid #41a2ff;
+    border-right:1px solid #41a2ff;
+    border-top:1px solid #41a2ff;
+    bottom: 51px;
+    background: url("../img/menu_bg_02.png") no-repeat;
+    overflow-y: scroll;
+} */
+
+
+.btn {
+    width:100px;
+    height:30px;
+    border-radius: 2em;
+    opacity:0.7;
+    border:1px solid red;
+    background-color:#FFFFFF;
+    color:#273273 ;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
